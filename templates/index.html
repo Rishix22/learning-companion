@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Companion</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Personalized Learning Companion</h1>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="profile">Profile</button>
+            <button class="tab-btn" data-tab="learn">Learn</button>
+            <button class="tab-btn" data-tab="review">Review</button>
+        </div>
+
+        <div class="tab-content active" id="profile-tab">
+            <h2>User Profile</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Knowledge Level (1-5):</label>
+                    <input type="number" id="knowledge-level" min="1" max="5" required>
+                </div>
+                <button type="submit" class="save">Save Profile</button>
+            </form>
+        </div>
+
+        <div class="tab-content" id="learn-tab">
+            <h2>Learn New Topic</h2>
+            <form id="learn-form">
+                <div class="form-group">
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="topic" required>
+                </div>
+                <button type="submit" class="save">Start Learning</button>
+            </form>
+            <div id="learning-content" class="hidden">
+                <h3 id="content-title"></h3>
+                <div id="content-body"></div>
+                <button id="save-material" class="save">Save for Review</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="review-tab">
+            <h2>Review Materials</h2>
+            <div id="review-list"></div>
+            <div id="review-interface" class="hidden">
+                <h3 id="review-title"></h3>
+                <div id="review-content"></div>
+                <div class="rating-buttons">
+                    <p>How well did you remember?</p>
+                    <button class="rating-btn" data-rating="1" class="save">1 - Not at all</button>
+                    <button class="rating-btn" data-rating="3" class="save">3 - Okay</button>
+                    <button class="rating-btn" data-rating="5" class="save">5 - Perfectly</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
